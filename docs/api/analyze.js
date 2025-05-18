@@ -2,8 +2,8 @@ function loadAnalysis() {
   const urlParams = new URLSearchParams(window.location.search);
   const type = urlParams.get('type') || 'week';
   
-  // 修改路径，确保正确指向JSON文件
-  fetch(`../api/responses/${type}.json`)
+  // 注意这里的路径
+  fetch(`responses/${type}.json`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('result').textContent = JSON.stringify(data);
